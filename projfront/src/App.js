@@ -20,7 +20,7 @@ function App() {
         phoneno: phoneno , 
         branch : branch 
     }).then(()=>{
-      console.log("Successfully sent ot backend");
+      console.log("Successfully sent TO backend");
     })
 }
 

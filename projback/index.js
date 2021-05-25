@@ -32,8 +32,11 @@ app.post('/create', (req, res)=>{
     const email  = req.body.email;
     const phoneno = req.body.phoneno;
     
+    console.log(regdno , name , branch , email , phoneno);
 
-    db.query('INSERT INTO students(regdno , name, branch , phoneno ,email) VALUES(regdno, name , branch , phoneno , email)' , 
+    // db.query('INSERT INTO students(regdno , name, branch , phoneno ,email) VALUES(regdno, name , branch , phoneno , email)' , 
+    db.query('INSERT INTO students(regdno) VALUES("1223")', 
+
     (err, res) =>{
         
         if(err) console.log(err);
