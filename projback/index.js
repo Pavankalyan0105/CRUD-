@@ -15,7 +15,7 @@ var db = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "Pavan@123",
-    database:"library" , 
+    database: "library", 
     insecureAuth : true
 });
 
@@ -32,8 +32,14 @@ app.post('/create', (req, res)=>{
     const email  = req.body.email;
     const phoneno = req.body.phoneno;
     
+    console.log(regdno , name , branch , email , phoneno);
 
-    db.query('INSERT INTO students(regdno , name, branch , phoneno ,email) VALUES(regdno, name , branch , phoneno , email)' , 
+    let query = `INSERT INTO students (regdno  , name ,branch ,  email ,phone) VALUES (?, ? , ? , ? , ?);`;
+    db.query(query , [regdno , name , branch , email , phoneno] ,
+
+    // db.query('INSERT INTO students(regdno , name, branch , phoneno ,email) VALUES(regdno, name , branch , phoneno , email)' , 
+//    db.query('INSERT INTO `students` (regdno1 , name1 , branch1 , phoneno1 , email1) VALUES(regdno, name , branch , phoneno , email)', 
+
     (err, res) =>{
         
         if(err) console.log(err);
