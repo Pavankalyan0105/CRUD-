@@ -38,23 +38,22 @@ function App() {
     <form className="App">
       <label>Regd No </label>   <input onChange={ (event) => {setRegdno(event.target.value)}}    type="text" required/>
       <label >Name   </label>   <input onChange={ (event) =>  {setName(event.target.value)}}      type="text" required/>
-      <select onChange={ (event) => {setBranch(event.target.value)}}>
-              <option value="volvo">IT</option>
-              <option value="saab">CSE</option>
-              <option value="mercedes">MECH</option>
-              <option value="audi">CIVIL</option>
-              <option value="audi">ECM</option>
+      <label className="branch">Branch 
+        <select onChange={ (event) => {setBranch(event.target.value)}}>
+              <option value="IT">IT</option>
+              <option value="CSE">CSE</option>
+              <option value="MECH">MECH</option>
+              <option value="CIVIL">CIVIL</option>
+              <option value="ECM">ECM</option>
 
-      </select>
-      
-      
-
-
+        </select>
+      </label>
+    
 
       {/* <label> Branch </label>   <input onChange={ (event) => {setBranch(event.target.value)}}    type="text" required/> */}
       <label> Phoneno</label>   <input onChange={ (event) => {setPhoneno(event.target.value)}}     type="number" required/>
       <label>Email   </label>   <input onChange={ (event) => {setEmail(event.target.value)}}   type="text" required/>
-      <input onClick = {addStudent}   type="button" value="submit" className="button"/>
+      <button onClick = {addStudent}   type="reset" value="submit" className="button">Submit</button>
     </form>
   );
 }
